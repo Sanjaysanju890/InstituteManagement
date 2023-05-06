@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        h1{
+            background-color: black;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            text-align: center;
+            width: 40%;
+            align-content: center;
+            margin-left: 450px;
+        }
+        div{
+            align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            background-color:lightcyan;
+            width: 400px;
+            height: 500px;
+
+            padding-left: 20px;
+            margin-left: 550px;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <h1>New-Student Entry Form</h1>
+    <hr />
+     {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert">
+    <strong> Message:</strong> {{ message }}
+    <button type="submit" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+    </div>
+    {% endfor %}
+    <form action="" method="post">
+    {% csrf_token %}
+       <div>
+        <label for=""> Student-Id</label>
+        <input type="number" id="student_id" name="student_id" placeholder="Enter your Stud-id" Required><br/><br/>
+
+        <label for=""> Student-Class</label>
+        <input type="number" id="student_class" name="student_class" placeholder="Enter your STanddard" Required><br/><br/>
+
+        <label for=""> Studenr Name</label>
+        <input type="text" id="student_name" name="student_name" placeholder="Enter your Student Name" Required><br/><br/>
+
+        <label for="">Student Father_name</label>
+        <input type="text" id="student_fname" name="student_fathername" placeholder="Enter your Father name" Required><br/><br/>
+
+        <label for="">Student-Addres</label>
+        <input type="text" id="student_addr" name="student_addr" placeholder="Enter YOUR adress" Required><br/><br/>
+
+        <label for=""> Student-Tuition Fee</label>
+        <input type="number" id="student_tuitionfee" name="student_tuitionfee" placeholder="Enter you tuition fee" Required><br/><br/>
+
+        <label for=""> Student-bus Fee</label>
+        <input type="number" id="student_busfee" name="student_busfee" placeholder="Enter you tuition fee" Required><hr width="93%"/>
+
+        <button type="submit" class="btn btn-outline-success">Submit Record</button>
+        <button type="button" class="btn btn-outline-dark" style="margin-left: 10px" onclick="location.href='{% url 'home' %}'">HOME</button>
+        <button type="button" class="btn btn-outline-dark" style="margin-left: 10px" onclick="location.href='{% url 'show' %}'">View Details</button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    </div>
+    </form>
+
+</body>
+</html>
